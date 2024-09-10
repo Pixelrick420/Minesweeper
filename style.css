@@ -6,7 +6,6 @@ html, body {
     padding: 0; 
     width: 100vw; 
     height: 100vh; 
-    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -17,10 +16,14 @@ body {
 }
 
 h1 {
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
     color: #ffffff;
-    font-size: 6vh;
-    font-weight: 700;
+    font-size: 15vh;
     margin-bottom: 0;
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -32,8 +35,12 @@ h1 {
 }
 
 .stats {
+    font-family: "SUSE", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
     color: aliceblue;
-    font-size: 2.5vh;
+    font-size: 3vh;
     display: flex;
     justify-content: space-between;
     width: 60vh;
@@ -55,15 +62,18 @@ h1 {
 
 .cell {
     background-color: #44475a;
-    color: #f8f8f2; 
+    color: #000000!important; 
     border: none; 
     border-radius: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5vh;
+    font-size: 4vh;
     cursor: pointer;
     transition: background-color 0.2s;
+    overflow: hidden; 
+    white-space: nowrap;
+    font-weight: 900;
 }
 
 .cell:hover {
@@ -71,8 +81,7 @@ h1 {
 }
 
 .cell.revealed {
-    background-color: #3b3b4f; 
-    color: #f8f8f2;
+    background-color: #19191f; 
 }
 
 .void {
@@ -138,22 +147,29 @@ h1 {
     background: #ffffff;
     border-radius: 50%;
     cursor: pointer;
-    /* color: */
+}
+
+.bomb{
+    color: #ff0000!important; 
+    background-color: #343952; 
 }
 
 .cell.flagged {
-    color: #f84f4f; 
+    color: #ff0000!important; 
     background-color: #343952; 
 }
 
 @media (max-width: 600px) {
+    .content{
+        margin-top: -20vh;
+    }
     .board {
         height: 40vh;
         width: 40vh;
     }
 
     .cell {
-        font-size: 2vh;
+        font-size: 2vh!important;
     }
 
     .stats {

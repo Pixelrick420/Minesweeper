@@ -109,7 +109,7 @@ function rightClick(e) {
 
   if (!cell.classList.contains('flagged') && flags > 0) {
     cell.classList.add('flagged');
-    cell.textContent = '🚩';
+    cell.textContent = '|>';
     flags--;
   } else if (cell.classList.contains('flagged')) {
     cell.classList.remove('flagged');
@@ -143,11 +143,11 @@ function reveal(x, y) {
 
 function color(num) {
     switch (num) {
-      case 1: return '#3C6FA3'; 
+      case 1: return '#A1C5FF '; 
       case 2: return '#7A9B7F'; 
-      case 3: return '#BF3F3F'; 
+      case 3: return '#FFC8A1'; 
       case 4: return '#8A6ABF'; 
-      case 5: return '#BF8C3F'; 
+      case 5: return '#FFA366'; 
       case 6: return '#00796B'; 
       case 7: return '#FBC02D'; 
       case 8: return '#C62828';
@@ -187,8 +187,8 @@ function over(wonGame) {
       for (let j = 0; j < size; j++) {
         if (grid[i][j] === -1) {
           const cell = document.querySelector(`.cell[data-x='${i}'][data-y='${j}']`);
-          cell.style.backgroundColor = '#cc2525';
-          cell.textContent = '💣';
+          cell.classList.add('bomb');
+          cell.textContent = 'X';
         }
       }
     }
